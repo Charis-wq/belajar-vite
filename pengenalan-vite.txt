@@ -1,0 +1,74 @@
+Devploment Tool
+saat kita membuat aplikasi menggunakan nodejs baik iyu menggunakan javascript maupun typescript
+maka banyak hal sering kita lakukan secars manual misalkan menjelaskan aplikasinya,lalu melakukan restart aplikasi ketika sudah melakukan perubahan
+atau jika kita menggunkan typescript kita harus melakukan compile terlebih dahulu lalu menjalankan ulang aplikasi
+
+Pengenalan Vite
+vite adlah tool untuk mempercepat proses devlopment apliaksi yang kita buat menggunkan nodejs
+vite memiliki fitur HMR(hot model replecment) dimana kita bisa melakukan perubahan module secara cepat tanpa kita harus melakukan relod/restart aplikasi yang sedang kita jalankan 
+vite juga memiliki fitur untuk melakukan bundling(membungkus) kode-kode yang kita buat menjadi kode yang dioptimasi dengan baik sebagai kode yang baik untuk mode production menggunakan liberary Rollup
+vite saat ini menjadi rekomendasi sebagai development tool untuk membuat aplikasi vuejs
+
+Menginstall Vite Dependency
+npm install --save-dev vite
+
+Menjalankan Aplikasi
+vite bisa kita gunakan menjalankan aplikasi 
+vite menggunakan file index.html sebagai entyr point dari aplikasi yang kita buat npx vite
+terdapat banyak opsi yang bisa kita lihat ketika menjalankan vite kita bisa menggunakan perintah npm vite-help
+
+Javascript 
+secara defaullt vite mendukung javascript module sehinggan kita bisa menggunakan kode Javascript
+dengan menggunakan javascript module 
+
+Build 
+ketika aplikasi kita sudah selesai dan siap untuk di deploy ke production maka kita bisa melakukan build menggunakan vite
+vite akan melakukan dependency pre-building diman vite akan menggabungkan banyak module yang kita gunakan menjadi satu hal ini akan mempercepat performa load halaman web kita
+selain itu vite bisa mendeteksi module-module yang kita gunakan saja sehingga ukuran file build akan lebih optimal karena berisikan kode yang dibutuhkan saja
+
+Perintah Build
+untuk melakukan build kita bisa menggunakan perintah: npx vite build
+untuk melihat opsi apa saja yang bisa kita ubah kita bisa menggunakan perintah: npx vite build-help
+secara default hasil build akan disimpan di folder dist.
+
+Node Dependency
+vite juga bisa secara otomatismelakukan build dari dependency yang kita install menggunakan nodejs packages
+namun perlu diperhatikan tidak semua nodejs package itu compatibel denganweb browser jadi kita harus memastiakan nodejs package yang kita gunakan itu bisa dijalankan di web
+contoh jika kita memasukan dependency exspressjs ini mungkin tidak bisa berjalan di web browser karena membutuhkan nodejs http server sedangkan di web browser hal itu tidak ada.  
+
+CSS
+kode css yang terdapat di halaman HTML secara otomatis juga akan di bundle oleh vite dengan begitu kode css nya akan menjadi lebih optimal 
+vite juga mendukung css @import   
+
+Css Pre-processors
+saat ini banyak sekali css pre-processor framewrok yang digunakan untuk mempermudah pembuatan kode css
+contohnya SASS,LESS dan STYLUS
+vite juga mendukung css pre-processor sehingga kita tidak perlu melakukan kompilasi secara manual agra menjadi kode css yang dimengerti oleh web browser
+
+JSON
+vite juga mendukung bundle json sehingga kita bisa dengan mudah menyimpan data dalam bentuk json dan mengambil datanya dari javascript dengan cara menggunakan javascript module
+
+Static Assets
+selain file javascript,typescript,css,json,kadang-kadang kita juga menggunakan static assets ketika membuat web seperti image,video,file text  dan lain-lain
+vite juga secara otomatis akan melakukan bundle ketika di web kita menggunakan file static assets 
+selain itu kita juga bisa melakukan import untuk static assets di javascript sebagai text pad kasus berupa text file
+
+Public Directory
+kadang-kadang kita juga butuh static assets yang ditampilkan secara dinamis sehingga kemungkinan lokasinya tidak terdapat di halaman web HTML
+atau static assets yang nama filenya tidaka boleh berubah misal favicon.ico atau robbot.txt dan lain-lain
+vite mendukung public directory dimana kita bisa menyimpan semua static assets yang tidak akan di optimize pada folder tersebut 
+
+Preview
+setelah kita melakukan build menggunakan vite semua file distribution terdpat di folder dist
+kadang-kadang kita ingin melihat hasilnya terlebih dahulu sebelum melakukan deployment ke server production
+kita bisa menggunakan perintah: npx vite Preview
+ingat ini hanya untuk preview di proses development hangan lakukan hal ini di server production
+
+Configuration
+secara default vite sudah memiliki default configuration sehingga kita tidak perlu melakukan pengaturan apapun
+namun jika kita ingin melakukan pengaturan vite juga mendukung dengan membuat file vite.config.js
+
+Multi-page Application
+saat kita membuat halaman web, kadang kita membuat halaman web lebih dari satu halaman HTML
+vite juga mendukung proses build utuk lebih dari satu HTML
+namun khusus untuk multi-page application kita harus daftarkan file-file mana saja yang akan di build pada vite configuration
