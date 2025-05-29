@@ -72,3 +72,12 @@ Multi-page Application
 saat kita membuat halaman web, kadang kita membuat halaman web lebih dari satu halaman HTML
 vite juga mendukung proses build utuk lebih dari satu HTML
 namun khusus untuk multi-page application kita harus daftarkan file-file mana saja yang akan di build pada vite configuration
+
+Plugins
+saat kita membuat web yang hanya membutuhkan HTML,CSS dan Javascript vite sudah sangat baik mendukung pekerjaan kita 
+namun kadang kita menggunkan framework tambahan seperti vueJS,ReactJS,Svelte dan lain-lain
+vite juga memiliki banyak sekali plugins tambahan untuk mendukungnya
+
+Tempalte
+sebenarnya vite memiliki template yang bisa kita gunakan untuk membuat project 
+untuk membuat project baru menggunakan template vite yang sudah disediakan kita bisa menggunakan perintah: npm create vite@latest
